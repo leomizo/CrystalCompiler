@@ -1,0 +1,31 @@
+int fatRecursivo(int n):
+	int fatorial 
+begin
+	if (n <= 1) :
+		return 1;
+	else :
+		fatorial = fatRecursivo(n - 1);
+		return n * fatorial;
+	endif
+end
+
+int fatIterativo(int n):
+	int fatorial
+begin
+	fatorial = 1;
+	while (n > 0):
+		fatorial = fatorial * n;
+		n = n - 1;
+	endwhile
+	return fatorial;
+end
+
+void main:
+	int recursivo,
+	int iterativo
+begin
+	recursivo = fatRecursivo(7);
+	iterativo = fatIterativo(6);
+	print("\n", "O fatorial de 7 e igual a ", recursivo, " pelo metodo recursivo", "\n");
+	print("O fatorial de 6 e igual a ", iterativo, " pelo metodo iterativo", "\n");
+end

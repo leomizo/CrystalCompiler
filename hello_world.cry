@@ -1,0 +1,4 @@
+void main:
+begin
+	print("Hello world!", "\n");
+end

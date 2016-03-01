@@ -1,0 +1,91 @@
+/*
+
+  Input.cry
+
+ */
+
+// Struct
+struct ExampleStruct:
+	int a,
+	char c,
+	boolean b
+endstruct
+
+// Função write
+void write(string s) :
+	boolean b,
+	float f
+begin
+	b = true;
+	f = 1.0;
+	print(s, "X", 2, 3.567);
+end
+
+// Função nextChar
+char nextChar(char c) :
+begin
+	return c + 1;
+end
+
+// Function returning struct
+ExampleStruct create[2](int a, char c, boolean b) :
+	ExampleStruct result[2]
+begin
+	result[0].a = a;
+	result[0].c = c;
+	result[0].b = b;
+	result[1].a = a;
+	result[1].c = c;
+	result[1].b = b;
+	return result;
+end
+
+// Função main
+void main :
+	int a,
+	float b,
+	char c,
+	int d[2][2],
+	boolean e,
+	ExampleStruct s[2]
+begin 
+	a = 1;
+	b = 3.1415;
+	c = 'd';
+
+	d = [ [1, b], [c, a + 4] ];
+
+	s = create(a, b, c);
+
+	scan(a, b, c);
+
+	for (a = 1; a <= 10; a = a + 1):
+
+		if (a % 2 == 1) :
+
+			while (b < 5) :
+				b = b + 2;
+			endwhile
+
+		elsif (b >= 3) :
+
+			d[1][2] = b;
+
+		else :
+
+			e = "false";
+			e = (((a != b) || c) && d) || not e;
+
+		endif
+
+	endfor
+
+	a = ((a + 3) * 5) % 2;
+	b = b * 5;
+	b = b / a;
+	
+	c = nextChar(c);
+
+	write("Hello world!");
+
+end
